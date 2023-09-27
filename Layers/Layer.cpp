@@ -87,8 +87,7 @@ void Layer::forward_pass(Matrix &inputs, Matrix &outputs)
 	apply_activation(outputs);
 }
 
-void Layer::setup(cl_uint mini_batch_size,
-									Matrix *lower_outputs)
+void Layer::setup(cl_uint mini_batch_size, Matrix *lower_outputs)
 {
 	deltas = Matrix(mini_batch_size, nbr_outputs + 1);
 	derivatives = Matrix(nbr_inputs + 1, nbr_outputs + 1);
